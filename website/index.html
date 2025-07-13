@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros Passos com HTML</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        main,
+        nav,
+        footer {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            padding-bottom: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #2c3e50;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #ecf0f1;
+            margin: 40px 0;
+        }
+
+        nav ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        ol,
+        ul {
+            padding-left: 40px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        mark {
+            background-color: #59b9df;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        blockquote {
+            border-left: 4px solid #bdc3c7;
+            margin: 1.5rem 0;
+            padding: 0 20px;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+
+        cite {
+            display: block;
+            margin-top: 0.5rem;
+            font-weight: bold;
+        }
+
+        pre {
+            background-color: #ecf0f1;
+            padding: 1rem;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            border: 1px solid #bdc3c7;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-style: italic;
+            color: #7f8c8d;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+
+        .form-example {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #ecf0f1;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: sans-serif;
+            font-size: 1rem;
+        }
+
+        .submit-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #2980b9;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            background-color: transparent;
+            box-shadow: none;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Guia de Campo do <abbr title="HyperText Markup Language">HTML</abbr></h1>
+        <p class="subtitle">Esta página é um exercício prático desenvolvido para aplicar e demonstrar o funcionamento
+            das principais tags do HTML, consolidando os conceitos aprendidos no curso.</p>
+        <hr>
+    </header>
+
+    <main>
+        <nav id="indice">
+            <h2>Índice</h2>
+            <ul>
+                <li><a href="#historia">História</a></li>
+                <li><a href="#pilares">Os Três Pilares da Web</a></li>
+                <li><a href="#estrutura">Estrutura Base</a></li>
+                <li><a href="#glossario">Glossário de Tags</a></li>
+                <li><a href="#semantico">HTML Semântico</a></li>
+                <li><a href="#acessibilidade">Acessibilidade na Web</a></li>
+                <li><a href="#formularios">Formulários</a></li>
+                <li><a href="#comentarios">Comentários</a></li>
+                <li><a href="#obsoleto">Cuidado com o Obsoleto!</a></li>
+                <li><a href="#referencias">Referências</a></li>
+            </ul>
+        </nav>
+
+        <section id="historia">
+            <h3>A Breve História da Web</h3>
+            <p>
+                Tudo começou com Tim Berners-Lee, um cientista britânico que inventou a World Wide Web em 1989. A ideia
+                era criar um sistema para compartilhar informações entre cientistas em universidades e
+                institutos ao redor do mundo.
+                O primeiro website foi ao ar em 1991. Ele usava uma linguagem de marcação simples chamada <abbr
+                    title="HyperText Markup Language">HTML</abbr>.
+            </p>
+            <blockquote cite="https://www.w3.org/History.html">
+                "O potencial da Web é que qualquer coisa pode ser ligada a qualquer outra coisa." - <i>Tim
+                    Berners-Lee</i>
+            </blockquote>
+            <p><small>(<a href="#indice">Voltar ao índice</a>)</small></p>
+            <hr>
+        </section>
+
+        <section id="pilares">
+            <h3>Os Três Pilares da Web</h3>
+            <p>Para construir qualquer site moderno, três tecnologias fundamentais que trabalham juntas são
+                fundamentais:</p>
+            <ol>
+                <li>
+                    <strong>HTML</strong>: A linguagem de marcação que define a <u>estrutura</u> e o conteúdo.
+                    <i>É o esqueleto da página.</i>
+                </li>
+                <li>
+                    <strong>CSS</strong>: A linguagem de estilos que controla a <u>aparência</u> visual.
+                    <i>É a roupa e a maquiagem.</i>
+                </li>
+                <li>
+                    <strong>JavaScript</strong>: A linguagem de programação que adiciona <u>interatividade</u> e
+                    comportamento.
+                    <i>São os músculos e o cérebro.</i>
+                </li>
+            </ol>
+            <p><small>(<a href="#indice">Voltar ao índice</a>)</small></p>
+            <hr>
+        </section>
+
+        <section id="estrutura">
+            <h4>Estrutura Base: O Esqueleto <abbr title="HyperText Markup Language">HTML</abbr></h4>
+            <p>Toda página HTML segue uma estrutura fundamental, que funciona como o esqueleto que sustenta todo o
+                conteúdo. É o ponto de partida obrigatório para qualquer projeto web.</p>
+
+            <p>"O código inicial que toda página deve ter <i>(boilerplate)</i>:</p>
+
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Título da Minha Página&lt;/title&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;h1&gt;Bem-vindo ao meu site!&lt;/h1&gt;
+    &lt;p&gt;Parágrafos, imagens, links e todo o resto do conteúdo visível.&lt;/p&gt;
+  &lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+            <p>O que está em <code>&lt;head&gt;</code> são as "instruções para a máquina", e o que está em
+                <code>&lt;body&gt;</code> é o "conteúdo para as pessoas".
+            </p>
+            <p><small>(<a href="#indice">Voltar ao índice</a>)</small></p>
+            <hr>
+        </section>
+
+        <section id="glossario">
+            <h3>Glossário de Tags Essenciais</h3>
+            <p>
+                Abaixo está uma tabela com as tags ensinadas no curso, explicando sua função. <br>
+                <mark>Entender a semântica de cada uma é crucial!</mark>
+            </p>
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Tag</th>
+                        <th>Função</th>
+                        <th>Exemplo de Uso</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code></td>
+                        <td>Títulos e subtítulos, definindo a hierarquia do conteúdo.</td>
+                        <td><code>&lt;h1&gt;Título Principal&lt;/h1&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;p&gt;</code></td>
+                        <td>Define um parágrafo de texto.</td>
+                        <td><code>&lt;p&gt;Isso é um parágrafo.&lt;/p&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;strong&gt;</code></td>
+                        <td>Deixa o texto em negrito (indica forte importância ou urgência).</td>
+                        <td>Texto <strong>importante</strong>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;i&gt;</code></td>
+                        <td>Marca um texto em itálico, geralmente para termos técnicos ou em outro idioma.</td>
+                        <td>A palavra <i>de facto</i>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;u&gt;</code></td>
+                        <td>Sublinha o texto. Deve ser usado com cautela, pois pode ser confundido com um link.</td>
+                        <td>Texto <u>sublinhado</u>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;sup&gt;</code> / <code>&lt;sub&gt;</code></td>
+                        <td>Sobrescrito (ex: 10<sup>3</sup>) e Subscrito (ex: H<sub>2</sub>O).</td>
+                        <td>Fórmulas e notas de rodapé.</td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;abbr&gt;</code></td>
+                        <td>Define uma abreviação, com a expansão visível ao passar o mouse.</td>
+                        <td><abbr title="Cascading Style Sheets">CSS</abbr></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;blockquote&gt;</code></td>
+                        <td>Usada para citar um bloco de texto de outra fonte.</td>
+                        <td>Citações longas e destacadas.</td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <p><small>(<a href="#indice">Voltar ao índice</a>)</small></p>
+            <hr>
+        </section>
+
+        <section id="semantico">
+            <h3>HTML Semântico: Dando Significado à Estrutura</h3>
+            <p>HTML semântico significa usar as tags corretas para o trabalho que elas foram criadas para fazer. Em vez
+                de usar <code>&lt;div&gt;</code> para tudo, usamos tags que descrevem o conteúdo, como
+                <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>,
+                <code>&lt;section&gt;</code> e <code>&lt;footer&gt;</code>.
+            </p>
+            <p>Isso ajuda os navegadores, os mecanismos de busca (SEO) e, principalmente, as tecnologias assistivas
+                (como leitores de tela) a entenderem a página.</p>
+            <blockquote class="quote">
+                <p>"Qualquer tolo consegue escrever código que um computador entende. Bons programadores escrevem código
+                    que humanos conseguem entender."</p>
+                <cite>— Martin Fowler</cite>
+            </blockquote>
+            <p><small>(<a href="#indice">Voltar ao índice</a>)</small></p>
+            <hr>
+        </section>
+
+        <section id="acessibilidade">
+            <h3>Acessibilidade: Construindo uma Web para Todos</h3>
+            <p>
+                Pense em uma rampa ao lado de uma escada em um prédio. A rampa não serve apenas para cadeirantes, mas
+                também para pessoas com carrinhos de bebê,
+                malas pesadas ou um gesso no pé. A rampa torna o acesso mais fácil para <strong>todos</strong>.
+            </p>
+
+            <p>
+                <strong>Acessibilidade na web</strong> segue o mesmo princípio: é a prática de remover barreiras e
+                garantir que os sites possam ser navegados e compreendidos por todas as pessoas, incluindo aquelas com
+                deficiências visuais, auditivas, motoras ou cognitivas.
+            </p>
+
+            <h4>Na Prática: Como o HTML Ajuda?</h4>
+            <p>Um HTML bem estruturado e semântico é a fundação de um site acessível. Aqui estão alguns exemplos chave:
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Uso Correto das Tags (Semântica):</strong> Usar <code>&lt;nav&gt;</code> para navegação,
+                    <code>&lt;button&gt;</code> para botões e <code>&lt;main&gt;</code> para o conteúdo principal
+                    informa aos leitores de tela exatamente qual o propósito de cada parte da página. Isso fornece um
+                    roteiro claro para as tecnologias assistivas, que podem anunciar 'Início da navegação' em vez de
+                    apenas 'Início de um grupo de elementos'.
+                </li>
+                <li>
+                    <strong>Imagens Descritivas (Atributo <code>alt</code>):</strong> O atributo <code>alt</code> é a
+                    "voz" da sua imagem para quem não pode vê-la. Em vez de um nome de arquivo, ele deve descrever o que
+                    a imagem mostra.
+                    <pre><code>&lt;!-- Ruim: --&gt; &lt;img src="gato.jpg" alt="foto"&gt;</code></pre>
+                    <pre><code>&lt;!-- Bom: --&gt; &lt; img src="gato.jpg" alt="Um gato preto de olhos verdes sentado na grama em um dia ensolarado."&gt;</code></pre>
+                </li>
+                <li>
+                    <strong>Links que Fazem Sentido:</strong> O texto de um link deve ser descritivo. Um leitor de tela
+                    pode listar todos os links de uma página. Uma lista de "clique aqui" não informa nada, mas uma lista
+                    de "Leia nosso relatório" é perfeitamente clara.
+                </li>
+            </ul>
+
+            <blockquote class="quote">
+                <p>"O poder da Web está em sua universalidade. O acesso por todos, independentemente de deficiência, é
+                    um aspecto essencial."</p>
+                <cite>— Tim Berners-Lee</cite>
+            </blockquote>
+
+            <p><small>(<a href="#indice">Voltar ao índice</a>)</small></p>
+            <hr>
+        </section>
+
+        <section id="formularios">
+            <h3>Formulários: A Interação com o Usuário</h3>
+            <p>
+                Formulários são essenciais para coletar dados do usuário, como em cadastros e logins.
+                A boa prática é sempre associar uma <code>&lt;label&gt;</code> a cada campo de entrada
+                (<code>&lt;input&gt;</code>) para melhorar a acessibilidade e a usabilidade.
+            </p>
+            <div class="form-example">
+                <form>
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="4"
+                            placeholder="Deixe sua dúvida ou sugestão..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar</button>
+                </form>
+            </div>
+            <p><small>(<a href="#indice">Voltar ao índice</a>)</small></p>
+            <hr>
+        </section>
+
+        <section id="comentarios">
+            <h3>Comentários</h3>
+            <p>Comentários em HTML são trechos de código que o navegador ignora completamente. Eles são extremamente
+                úteis para deixar notas para você mesmo ou para outros desenvolvedores, explicar uma parte complexa do
+                código ou desativar temporariamente uma linha sem apagá-la.</p>
+            <pre><code>&lt;!-- Este é um comentário. Ele não aparecerá na página. --&gt;</code></pre>
+            <p><strong>Atenção:</strong> Nunca coloque informações sensíveis (como senhas ou dados de usuários) dentro
+                de comentários, pois eles ainda são visíveis para qualquer um que inspecione o código-fonte da página.
+            </p>
+            <p><small>(<a href="#indice">Voltar ao índice</a>)</small></p>
+            <hr>
+        </section>
+
+        <section id="obsoleto">
+            <h3>Cuidado com o Obsoleto!</h3>
+            <p>
+                Antigamente, usava-se tags para definir a aparência do site. A tag <code>&lt;font&gt;</code> é o exemplo
+                mais famoso.
+                Hoje, isso é uma <strong>má prática</strong>. A estilização deve ser feita com CSS.
+            </p>
+            <p>
+                Forma antiga (não faça isso!):
+                <del>
+                    <font color="blue"><code>&lt;font color="blue"&gt;Texto azul&lt;/font&gt;</font></code>
+                </del><br>
+                Forma moderna (o correto!): Criar uma classe no CSS e aplicá-la no HTML.
+            </p>
+            <p><small>(<a href="#indice">Voltar ao índice</a>)</small></p>
+            <hr>
+        </section>
+
+        <section id="referencias">
+            <h3>Links Úteis de Referência</h3>
+            <ul>
+                <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">MDN Web Docs - HTML</a>
+                </li>
+                <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML Tutorial</a></li>
+                <li><a href="https://github.com/digitalinnovationone/trilha-html-modulo-1" target="_blank">Repositório
+                        do Desafio (GitHub)</a></li>
+            </ul>
+            <p><small>(<a href="#indice">Voltar ao índice</a>)</small></p>
+        </section>
+    </main>
+
+    <footer>
+        <p><small>&copy; 2025 - Projeto Criado para o Desafio HTML da <a href="http://dio.me">DIO</a></small></p>
+    </footer>
+</body>
+
+</html>
